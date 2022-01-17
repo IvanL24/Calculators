@@ -16,9 +16,9 @@
         
         <form action="arithmetic" method="post">
             <label>First:</label>
-            <input type="number" name="fvalue" id="arithmetic"> <br>
+            <input type="text" name="fvalue" id="arithmetic"> <br>
             <label>Second:</label>
-            <input type="number" name="svalue" id="arithmetic"> <br>
+            <input type="text" name="svalue" id="arithmetic"> <br>
             
             <button type="submit" name="calculate" value="add">+</button>
             <button type="submit" name="calculate" value="subtract">-</button>

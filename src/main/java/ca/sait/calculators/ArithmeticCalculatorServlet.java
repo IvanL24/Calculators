@@ -65,8 +65,11 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
                     request.setAttribute("message", fvalue * svalue);
                 }
                 else if(compute.equals("divide")){
-                    request.setAttribute("message", fvalue / svalue);
-                }                      
+                    request.setAttribute("message", (double)fvalue / svalue);
+                }
+                else if (compute.equals("[a-zA-Z]")){
+                    request.setAttribute("message", "Invalid");
+                }
             }
         } catch (Exception ex){
             request.setAttribute("message", "Invalid");
