@@ -42,15 +42,21 @@ public class AgeCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String ageInput = request.getParameter("age");
         
-        int age = Integer.parseInt(ageInput);
-        
-        age += 1;
-        
-        String message = String.format("You will be %d after your next birthday", age);
-        
-        request.setAttribute("message", message);
+        try {
+            String ageInput = request.getParameter("age");
+
+            int age = Integer.parseInt(ageInput);
+
+            age += 1;
+
+            String message = String.format("You will be %d after your next birthday", age);
+
+            request.setAttribute("message", message);
+        }
+        catch (Exception e){
+            request.setAttribute("message", "You must give your current age.");
+        }
         
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
     }
